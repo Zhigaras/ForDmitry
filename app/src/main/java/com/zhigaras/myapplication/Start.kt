@@ -26,5 +26,11 @@ val map = mapOf("Vasya" to listOf(1, 3), "Vova" to 3497523)
 val set = setOf(1, 2, 3, 4, 1, 1, 1, 2, 3)
 
 fun main() {
-    println(set)
+//    println(set)
+    
+    val string = "q2peoir3up3qoweq4p"
+    val str2 = string.map { it + 1 }
+//    val digits = string.filter { it == 'q' }
+//    val digits2 = string
+    println(str2)
 }
