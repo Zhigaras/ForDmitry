@@ -1,4 +1,4 @@
-package com.zhigaras.learnclasses
+package com.zhigaras.myapplication.classes
 
 fun main() {
     

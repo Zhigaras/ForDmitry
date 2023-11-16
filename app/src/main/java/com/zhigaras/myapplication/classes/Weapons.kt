@@ -1,4 +1,4 @@
-package com.zhigaras.learnclasses
+package com.zhigaras.myapplication.classes
 
 fun main() {
     
@@ -53,17 +53,22 @@ class Pistol : Weapon() {
     
     override val ammo: String = "pistol ammo"
     
+    override fun toString(): String {
+        return "Pistol"
+    }
 }
 
 class Shotgun : Weapon() {
     
     override val ammo: String = "shotgun ammo"
-    
+    override fun toString(): String {
+        return "Shotgun"
+    }
 }
 
-class Solder(val name: String){
+class Solder(val name: String) {
     
-    var weapon: Weapon = Pistol()
+    private var weapon: Weapon = Pistol()
     
     fun takeNewWeapon(newWeapon: Weapon) {
         weapon = newWeapon
@@ -71,5 +76,23 @@ class Solder(val name: String){
     
     fun shoot() {
         weapon.fire()
+    }
+    
+    override fun toString(): String {
+        return "Solder $name, weapon $weapon"
+    }
+    
+    //метод для сравнения двух объектов
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true  //сравниваем два объекта по ссылке.
+        if (other !is Solder) return false //смотрим, является ли рэмбо2 тоже экземпляром класса Солдат
+        
+        if (name != other.name) return false
+        
+        return true
+    }
+    
+    override fun hashCode(): Int {
+        return name.hashCode()
     }
 }
